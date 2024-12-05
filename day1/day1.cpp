@@ -12,11 +12,11 @@
 std::uint64_t day1::part1() noexcept {
   input.clear();
   input.seekg(0, std::ios::beg);
-  auto stream = std::views::istream<int>(input);
-  auto second = stream | std::views::drop(1) | std::views::stride(2) | std::ranges::to<std::vector>();
+  auto second =
+      std::views::istream<int>(input) | std::views::drop(1) | std::views::stride(2) | std::ranges::to<std::vector>();
   input.clear();
   input.seekg(0, std::ios::beg);
-  auto first = stream | std::views::stride(2) | std::ranges::to<std::vector>();
+  auto first = std::views::istream<int>(input) | std::views::stride(2) | std::ranges::to<std::vector>();
   std::ranges::sort(first);
   std::ranges::sort(second);
   return *std::ranges::fold_left_first(std::views::zip_transform([](auto a, auto b) { return std::abs(a - b); },
@@ -27,11 +27,11 @@ std::uint64_t day1::part1() noexcept {
 std::uint64_t day1::part2() noexcept {
   input.clear();
   input.seekg(0, std::ios::beg);
-  auto stream = std::views::istream<int>(input);
-  auto second = stream | std::views::drop(1) | std::views::stride(2) | std::ranges::to<std::vector>();
+  auto second =
+      std::views::istream<int>(input) | std::views::drop(1) | std::views::stride(2) | std::ranges::to<std::vector>();
   input.clear();
   input.seekg(0, std::ios::beg);
-  auto first = stream | std::views::stride(2);
+  auto first = std::views::istream<int>(input) | std::views::stride(2);
   return *std::ranges::fold_left_first(std::views::transform(first,
                                                              [&second](const auto &el) {
                                                                return std::ranges::count(second, el);
