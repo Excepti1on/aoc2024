@@ -1,3 +1,2 @@
-/cmake-build-debug
-/cmake-build-debug-mingw-1
-/cmake-build-release
+/cmake*
+/.idea
