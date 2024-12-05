@@ -19,3 +19,8 @@ add_library(day5 OBJECT day5/day5.h day5/day5.cpp)
 add_executable(aoc2024 main.cpp)
 
 target_link_libraries(aoc2024 day1 day2 day3 day4 day5)
+
+add_test(NAME TestTest
+            COMMAND TestTest)
+add_executable(test tests/test.cpp)
+target_link_libraries(test day1 day2 day3 day4 day5)
