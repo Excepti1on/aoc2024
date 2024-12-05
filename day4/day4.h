@@ -5,16 +5,18 @@
 #ifndef AOC2024_DAY4_DAY4_H_
 #define AOC2024_DAY4_DAY4_H_
 
-#include <string_view>
 #include <fstream>
 #include <cstdint>
+#include <filesystem>
 class day4 {
- private:
-  const std::string_view input{R"(C:\Users\olive\CLionProjects\aoc2024\day4\input.txt)"};
-  std::ifstream file{input.begin()};
- public:
-  std::uint64_t part1();
-  std::uint64_t part2();
+  public:
+    day4(const char* base_dir) : base_dir{base_dir} {}
+    std::uint64_t part1();
+    std::uint64_t part2();
+
+   private:
+    const std::filesystem::path base_dir;
+    std::ifstream file{base_dir / "day4" / "input.txt"};
 };
 
 #endif //AOC2024_DAY4_DAY4_H_

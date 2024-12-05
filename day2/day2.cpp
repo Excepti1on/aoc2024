@@ -9,7 +9,7 @@
 #include <iostream>
 #include "day2.h"
 
-auto parse(auto &file) {
+static auto parse(auto &file) {
   file.clear();
   file.seekg(std::ios::beg);
   std::string line;

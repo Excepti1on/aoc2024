@@ -6,13 +6,17 @@
 #define AOC2024_DAY5_DAY5_H_
 
 #include <fstream>
-#include <string_view>
+#include <cstdint>
+#include <filesystem>
 class day5 {
-  const std::string_view input{R"(C:\Users\olive\CLionProjects\aoc2024\day5\input.txt)"};
-  std::ifstream file{input.begin()};
- public:
-  std::uint64_t part1();
-  std::uint64_t part2();
+  public:
+    day5(const char* base_dir) : base_dir{base_dir} {}
+    std::uint64_t part1();
+    std::uint64_t part2();
+
+   private:
+    const std::filesystem::path base_dir;
+    std::ifstream file{base_dir / "day5" / "input.txt"};
 };
 
 #endif //AOC2024_DAY5_DAY5_H_

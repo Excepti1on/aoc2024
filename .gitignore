@@ -1,2 +1,8 @@
 /cmake*
 /.idea
+/build
+/.vscode
+/CMakeFiles
+aoc2024
+CMakeCache*
+Makefile

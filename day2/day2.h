@@ -6,15 +6,17 @@
 #define AOC2024_DAY2_DAY2_H_
 
 #include <cstdint>
-#include <string_view>
 #include <fstream>
+#include <filesystem>
 class day2 {
  public:
-  std::uint64_t part1();
-  std::uint64_t part2();
- private:
-  const std::string_view input{"../day2/input.txt"};
-  std::ifstream file{input.data()};
+    day2(char* base_dir) : base_dir{base_dir} {}
+    std::uint64_t part1();
+    std::uint64_t part2();
+
+   private:
+    const std::filesystem::path base_dir;
+    std::ifstream file{base_dir / "day2" / "input.txt"};
 };
 
 #endif //AOC2024_DAY2_DAY2_H_

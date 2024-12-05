@@ -5,16 +5,18 @@
 #ifndef AOC2024_DAY1_DAY1_H_
 #define AOC2024_DAY1_DAY1_H_
 
-#include <string_view>
 #include <cstdint>
+#include <filesystem>
 #include <fstream>
 class day1 {
- public:
-  std::uint64_t part1() noexcept;
-  std::uint64_t part2() noexcept;
- private:
-  const std::string_view file{R"(C:\Users\olive\CLionProjects\aoc2024\day1\input.txt)"};
-  std::ifstream input{file.begin()};
+   public:
+    day1(char* base_dir) : base_dir{base_dir} {}
+    std::uint64_t part1() noexcept;
+    std::uint64_t part2() noexcept;
+
+   private:
+    const std::filesystem::path base_dir;
+    std::ifstream input{base_dir / "day1" / "input.txt"};
 };
 
-#endif //AOC2024_DAY1_DAY1_H_
+#endif  // AOC2024_DAY1_DAY1_H_
