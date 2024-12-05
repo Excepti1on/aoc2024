@@ -6,6 +6,10 @@
 #include "day4/day4.h"
 #include "day5/day5.h"
 int main(int argc, char** argv) {
+  if(argc == 1){
+    std::cerr << "please provide the base dir as an argument." << std::endl;
+    std::cerr << "e.g. $pwd on windows or linux." << std::endl;
+  }
   {
     day1 day_1{argv[1]};
     std::cout << day_1.part1() << std::endl;

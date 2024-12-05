@@ -32,19 +32,15 @@ bool safe(const std::vector<int> &num) {
       || std::ranges::all_of(view, [](const auto &el) { return el < 0 && el >= -3; });
 }
 std::uint64_t day2::part1() {
-  auto nums = parse(file);
-  return std::ranges::count_if(nums, safe);
+  return std::ranges::count_if(parse(file), safe);
 }
 std::uint64_t day2::part2() {
-  std::vector<std::vector<int>> nums = parse(file);
-
-  return std::ranges::count_if(nums, [](std::vector<int> &num) {
-    auto rep = std::views::repeat(num, num.size()) | std::views::enumerate
-        | std::views::transform([](std::tuple<int, std::vector<int>> el) {
-          auto [key, value] = el;
-          value.erase(value.begin() + key);
-          return value;
-        });
-    return std::ranges::any_of(rep, safe);
+  return std::ranges::count_if(parse(file), [](std::vector<int> &num) {
+    return std::ranges::any_of(std::views::repeat(num, num.size()) | std::views::enumerate
+                                   | std::views::transform([](std::tuple<int, std::vector<int>> el) {
+                                     auto [key, value] = el;
+                                     value.erase(value.begin() + key);
+                                     return value;
+                                   }), safe);
   });
 }
