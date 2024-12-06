@@ -20,6 +20,9 @@ add_executable(aoc2024 main.cpp)
 
 target_link_libraries(aoc2024 day1 day2 day3 day4 day5)
 
-add_test(NAME test COMMAND build/bin/aoc2024.exe $pwd)
-add_executable(test tests/test.cpp)
-target_link_libraries(test day1 day2 day3 day4 day5)
+enable_testing()
+add_executable(testAll tests/test.cpp)
+target_link_libraries(testAll day1 day2 day3 day4 day5)
+
+add_test(NAME testAll COMMAND build/bin/testAll "${PROJECT_SOURCE_DIR}" )
+

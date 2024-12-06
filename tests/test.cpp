@@ -10,6 +10,7 @@
 #include "../day5/day5.h"
 int main(int argc, char** argv) {
   if(argc == 1){
+    std::cerr << "missing argument" << std::endl;
     return -1;
   }
   {
