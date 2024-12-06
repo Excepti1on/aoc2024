@@ -16,13 +16,14 @@ add_library(day2 OBJECT day2/day2.h day2/day2.cpp)
 add_library(day3 OBJECT day3/day3.h day3/day3.cpp)
 add_library(day4 OBJECT day4/day4.h day4/day4.cpp)
 add_library(day5 OBJECT day5/day5.h day5/day5.cpp)
+add_library(day6 OBJECT day6/day6.h day6/day6.cpp)
 add_executable(aoc2024 main.cpp)
 
-target_link_libraries(aoc2024 day1 day2 day3 day4 day5)
+target_link_libraries(aoc2024 day1 day2 day3 day4 day5 day6)
 
 enable_testing()
 add_executable(testAll tests/test.cpp)
-target_link_libraries(testAll day1 day2 day3 day4 day5)
+target_link_libraries(testAll day1 day2 day3 day4 day5 day6)
 
 add_test(NAME testAll COMMAND build/bin/testAll "${PROJECT_SOURCE_DIR}" )
 
