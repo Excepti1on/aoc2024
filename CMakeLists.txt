@@ -8,7 +8,7 @@ set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
-add_link_options(-static -static-libgcc -static-libstdc++)
+add_link_options(-static-libgcc -static-libstdc++)
 
 find_package(OpenMP REQUIRED)
 
@@ -21,7 +21,8 @@ add_library(day5 OBJECT day5/day5.h day5/day5.cpp)
 add_library(day6 OBJECT day6/day6.h day6/day6.cpp)
 add_library(day7 OBJECT day7/day7.cpp day7/day7.h)
 add_executable(aoc2024 main.cpp)
-
+target_link_libraries(day7 OpenMP::OpenMP_CXX)
+target_link_libraries(day6 OpenMP::OpenMP_CXX)
 target_link_libraries(aoc2024 PUBLIC day1 day2 day3 day4 day5 day6 day7 OpenMP::OpenMP_CXX)
 
 enable_testing()

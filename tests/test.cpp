@@ -8,7 +8,7 @@
 #include "../day3/day3.h"
 #include "../day4/day4.h"
 #include "../day5/day5.h"
-int test(int argc, char** argv) {
+int main(int argc, char** argv) {
   if(argc == 1){
     std::cerr << "missing argument" << std::endl;
     return -1;
