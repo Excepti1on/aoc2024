@@ -9,14 +9,27 @@
 #include <algorithm>
 #include <ranges>
 #include <omp.h>
+#include <cmath>
 #include "day7.h"
 
+static inline std::uint64_t firstDigit(int n)
+{
+  // Find total number of digits - 1
+  int digits = (int)std::log10(n);
+
+  // Find first digit
+  n = (int)(n / std::pow(10, digits));
+
+  // Return first digit
+  return n;
+}
 static auto generate_ops(std::string ops, std::size_t size)
 {
   std::vector<std::vector<std::string>> all_ops(size);
   std::vector<std::string> op_set;
-  for(int i = 0; i < ops.length(); ++i){
-    op_set.push_back(ops.substr(i,1));
+  for (int i = 0; i < ops.length(); ++i)
+  {
+    op_set.push_back(ops.substr(i, 1));
   }
   all_ops[1] = std::move(op_set);
   for (int i = 2; i < size; ++i)
@@ -61,7 +74,7 @@ std::uint64_t day7::part1()
   auto eqs = read(file);
   std::uint64_t sum = 0;
   auto all_ops = generate_ops("am", 12);
-  #pragma omp parallel for reduction(+:sum)
+#pragma omp parallel for reduction(+ : sum)
   for (const auto &eq : eqs)
   {
     auto key = eq[0];
@@ -107,7 +120,7 @@ std::uint64_t day7::part2()
   auto eqs = read(file);
   std::uint64_t sum = 0;
   auto all_ops = generate_ops("acm", 12);
-#pragma omp parallel for reduction(+:sum)
+#pragma omp parallel for reduction(+ : sum)
   for (const auto &eq : eqs)
   {
     auto key = eq[0];
