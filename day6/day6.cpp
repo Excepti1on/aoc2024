@@ -89,7 +89,7 @@ static auto patrol(std::array<std::size_t, 3> start, const std::vector<std::vect
       break;
     }
   }
-  return visited;
+  return std::vector(visited.begin(), visited.end());
 }
 static auto find_loop(std::array<std::size_t, 3> start, const std::vector<std::vector<bool>> &pos) {
   std::unordered_set<std::array<std::size_t, 3>, hashFunction<3>> visited{};
@@ -146,6 +146,7 @@ std::uint64_t day6::part2() {
   auto [start, pos] = read(file);
   uint64_t sum = 0;
   auto visited = patrol(start, pos);
+  #pragma omp parallel for reduction(+:sum) firstprivate(pos)
   for (auto &vis : visited) {
     pos[vis[0]][vis[1]] = true;
     sum += find_loop(start, pos);
