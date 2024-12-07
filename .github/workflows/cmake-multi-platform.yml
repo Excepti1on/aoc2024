@@ -34,7 +34,7 @@ jobs:
             c_compiler: gcc-14
             cpp_compiler: g++-14
           - os: ubuntu-24.04
-            c_compiler: gcc-14
+            c_compiler: clang-18
             cpp_compiler: clang++-18
         exclude:
           - os: windows-latest
