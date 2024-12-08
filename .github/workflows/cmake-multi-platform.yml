@@ -54,7 +54,7 @@ jobs:
       run: |
         echo "build-output-dir=${{ github.workspace }}" >> "$GITHUB_OUTPUT"
     - name: doing something on macOS
-      if: runner.os == 'ubuntu-24.04'
+      if: matrix.os == 'ubuntu-24.04'
       run: sudo apt-get update; sudo apt-get install -y libomp5 libomp-dev
 
     - name: Configure CMake
