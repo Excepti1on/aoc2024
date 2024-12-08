@@ -8,3 +8,9 @@ CMakeCache*
 Makefile
 CTest*
 Testing*
+*.dir
+x64
+*.vcxproj*
+*sln
+*json
+*.vs
