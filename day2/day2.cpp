@@ -36,8 +36,7 @@ std::uint64_t day2::part1() {
 }
 std::uint64_t day2::part2() {
   return std::ranges::count_if(parse(file), [](std::vector<int> &num) {
-    return std::ranges::any_of(std::views::repeat(num, num.size()) | std::views::enumerate
-                                   | std::views::transform([](std::tuple<int, std::vector<int>> el) {
+    return std::ranges::any_of(std::views::repeat(num)|std::views::take(num.size()) | std::views::enumerate | std::views::transform([](std::tuple<int, std::vector<int>> el) {
                                      auto [key, value] = el;
                                      value.erase(value.begin() + key);
                                      return value;

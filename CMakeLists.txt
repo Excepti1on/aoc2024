@@ -9,6 +9,15 @@ set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
 find_package(OpenMP REQUIRED)
+if (CMAKE_CXX_COMPILER_ID STREQUAL "Clang")
+  # using Clang
+elseif (CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
+  # using GCC
+elseif (CMAKE_CXX_COMPILER_ID STREQUAL "Intel")
+  # using Intel C++
+elseif (CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
+  add_compile_options("-openmp:llvm")
+endif()
 add_library(day1 OBJECT day1/day1.h day1/day1.cpp)
 
 add_library(day2 OBJECT day2/day2.h day2/day2.cpp)
