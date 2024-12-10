@@ -95,4 +95,3 @@ std::uint64_t day9::part2() {
   }
   return checksum;
 }
-
