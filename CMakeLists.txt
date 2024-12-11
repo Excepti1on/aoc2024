@@ -10,7 +10,7 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
 find_package(OpenMP REQUIRED)
 if (CMAKE_CXX_COMPILER_ID STREQUAL "Clang")
-set(CMAKE_CXX_FLAGS "-march=native -stdlib=libc++")
+set(CMAKE_CXX_FLAGS "-march=native")
 elseif (CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
 set(CMAKE_CXX_FLAGS "-march=native")
 elseif (CMAKE_CXX_COMPILER_ID STREQUAL "Intel")
