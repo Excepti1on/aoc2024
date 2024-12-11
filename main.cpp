@@ -13,11 +13,6 @@
 #include "day11/day11.h"
 int main(int argc, char **argv)
 {
-  std::cout << argc << std::endl;
-  for (int i = 0; i < argc; ++i)
-  {
-    std::cout << argv[i] << std::endl;
-  }
   if (argc == 1)
   {
     std::cerr << "please provide the base dir as an argument." << std::endl;
