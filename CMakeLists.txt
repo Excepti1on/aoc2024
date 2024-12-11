@@ -37,7 +37,7 @@ target_link_libraries(aoc2024 PUBLIC day1 day2 day3 day4 day5 day6 day7 day8 day
 
 enable_testing()
 add_executable(testAll tests/test.cpp)
-target_link_libraries(testAll day1 day2 day3 day4 day5 day6 day7 day8 day9 day10 day11)
+target_link_libraries(testAll day1 day2 day3 day4 day5 day6 day7 day8 day9 day10 day11 OpenMP::OpenMP_CXX)
 
 add_test(NAME testAll COMMAND testAll "${PROJECT_SOURCE_DIR}" )
 
