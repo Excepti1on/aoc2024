@@ -43,8 +43,8 @@ int main(int argc, char **argv) {
   }
   {
     day6 day_6{argv[1]};
-    //std::cout << day_6.part1() << std::endl;
-    //std::cout << day_6.part2() << std::endl;
+    std::cout << day_6.part1() << std::endl;
+    std::cout << day_6.part2() << std::endl;
   }
   {
     day7 day_6{argv[1]};

@@ -54,11 +54,15 @@ static std::int64_t count_stones(std::int64_t stone, std::int64_t n) {
 }
 std::uint64_t day11::part1() {
   auto nums = read(file);
-  auto count = std::bind_back(count_stones, 25);
+  auto count = [](const auto& el){
+    return count_stones(el, 25);
+  };
   return *std::ranges::fold_left_first(nums | std::views::transform(count), std::plus{});
 }
 std::uint64_t day11::part2() {
   auto nums = read(file);
-  auto count = std::bind_back(count_stones, 75);
+    auto count = [](const auto& el){
+    return count_stones(el, 75);
+  };
   return *std::ranges::fold_left_first(nums | std::views::transform(count), std::plus{});
 }
