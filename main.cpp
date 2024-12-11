@@ -10,6 +10,7 @@
 #include "day8/day8.h"
 #include "day9/day9.h"
 #include "day10/day10.h"
+#include "day11/day11.h"
 int main(int argc, char **argv) {
   if (argc == 1) {
     std::cerr << "please provide the base dir as an argument." << std::endl;
@@ -62,6 +63,11 @@ int main(int argc, char **argv) {
   }
   {
     day10 day_6{argv[1]};
+    std::cout << day_6.part1() << std::endl;
+    std::cout << day_6.part2() << std::endl;
+  }
+  {
+    day11 day_6{argv[1]};
     std::cout << day_6.part1() << std::endl;
     std::cout << day_6.part2() << std::endl;
   }
