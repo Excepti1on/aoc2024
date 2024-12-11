@@ -7,17 +7,17 @@ set(CMAKE_BINARY_DIR "${PROJECT_SOURCE_DIR}/build")
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
-set(CMAKE_CXX_FLAGS "-march=native")
 
 find_package(OpenMP REQUIRED)
 if (CMAKE_CXX_COMPILER_ID STREQUAL "Clang")
-  # using Clang
+set(CMAKE_CXX_FLAGS "-march=native")
 elseif (CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
-  # using GCC
+set(CMAKE_CXX_FLAGS "-march=native")
 elseif (CMAKE_CXX_COMPILER_ID STREQUAL "Intel")
   # using Intel C++
 elseif (CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
 	set(CMAKE_SUPPRESS_REGENERATION true)
+  	add_definitions(/arch:AVX2)
 	add_compile_options("-openmp:llvm")
 endif()
 add_library(day1 OBJECT day1/day1.h day1/day1.cpp)
