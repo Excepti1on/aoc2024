@@ -11,6 +11,9 @@
 #include "../day6/day6.h"
 #include "../day7/day7.h"
 #include "../day8/day8.h"
+#include "../day9/day9.h"
+#include "../day10/day10.h"
+#include "../day11/day11.h"
 int main(int argc, char** argv) {
   if(argc == 1){
     std::cerr << "missing argument" << std::endl;
@@ -55,5 +58,20 @@ int main(int argc, char** argv) {
     day8 day_5{argv[1]};
     assert(day_5.part1() == 426);
     assert(day_5.part2() == 1359);
+  }
+  {
+    day9 day_5{argv[1]};
+    assert(day_5.part1() == 1928);
+    assert(day_5.part2() == 2858);
+  }
+  {
+    day10 day_5{argv[1]};
+    assert(day_5.part1() == 566);
+    assert(day_5.part2() == 1324);
+  }
+  {
+    day11 day_5{argv[1]};
+    assert(day_5.part1() == 199986);
+    assert(day_5.part2() == 236804088748754);
   }
 }
