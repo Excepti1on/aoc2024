@@ -32,11 +32,12 @@ add_library(day8 OBJECT day8/day8.cpp day8/day8.h)
 add_library(day9 OBJECT day9/day9.cpp day9/day9.h)
 add_library(day10 OBJECT day10/day10.cpp day10/day10.h)
 add_library(day11 OBJECT day11/day11.cpp day11/day11.h)
+add_library(day12 OBJECT day12/day12.cpp day12/day12.h)
 
 add_executable(aoc2024 main.cpp)
 
 target_link_libraries(day6 OpenMP::OpenMP_CXX)
-target_link_libraries(aoc2024 PUBLIC day1 day2 day3 day4 day5 day6 day7 day8 day9 day10 day11 OpenMP::OpenMP_CXX)
+target_link_libraries(aoc2024 PUBLIC day1 day2 day3 day4 day5 day6 day7 day8 day9 day10 day11 day12 OpenMP::OpenMP_CXX)
 
 enable_testing()
 add_executable(testAll tests/test.cpp)
