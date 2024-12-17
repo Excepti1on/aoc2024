@@ -40,12 +40,12 @@ static auto read(std::ifstream &file) {
 	}
 	return eqs;
 }
-static auto solve(const LE &le) -> std::uint64_t {
+static auto solve(const LE &le) {
 	const auto delta = le.ax * le.by - le.bx * le.ay;
 	const auto delta1 = le.cx * le.by - le.bx * le.cy;
 	const auto delta2 = le.ax * le.cy - le.cx * le.ay;
 	if (delta1 % delta != 0 || delta2 % delta != 0) {
-		return 0;
+		return 0ll;
 	}
 	return delta1 / delta * 3 + delta2 / delta;
 }
