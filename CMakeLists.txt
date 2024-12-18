@@ -12,7 +12,7 @@ find_package(OpenMP REQUIRED)
 if (CMAKE_CXX_COMPILER_ID STREQUAL "Clang")
     set(CMAKE_CXX_FLAGS "-march=native")
 elseif (CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
-set(CMAKE_CXX_FLAGS "-march=native")
+    set(CMAKE_CXX_FLAGS "-march=native")
 elseif (CMAKE_CXX_COMPILER_ID STREQUAL "Intel")
     # using Intel C++
 elseif (CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
@@ -36,15 +36,16 @@ add_library(day12 OBJECT day12/day12.cpp day12/day12.h)
 add_library(day13 OBJECT day13/day13.cpp day13/day13.h)
 add_library(day14 OBJECT day14/day14.h day14/day14.cpp)
 add_library(day15 OBJECT day15/day15.cpp day15/day15.h)
-
+add_library(day16 OBJECT day16/day16.cpp day16/day16.h)
 add_executable(aoc2024 main.cpp)
 
 target_link_libraries(day6 OpenMP::OpenMP_CXX)
-target_link_libraries(aoc2024 PUBLIC day1 day2 day3 day4 day5 day6 day7 day8 day9 day10 day11 day12 day13 day14 day15 OpenMP::OpenMP_CXX)
+target_link_libraries(aoc2024 PUBLIC day1 day2 day3 day4 day5 day6 day7 day8 day9 day10 day11 day12 day13 day14 day15 day16 OpenMP::OpenMP_CXX)
 
 enable_testing()
 add_executable(testAll tests/test.cpp)
 target_link_libraries(testAll day1 day2 day3 day4 day5 day6 day7 day8 day9 day10 day11 day12 day13 OpenMP::OpenMP_CXX)
 
 add_test(NAME testAll COMMAND testAll "${PROJECT_SOURCE_DIR}")
+
 
