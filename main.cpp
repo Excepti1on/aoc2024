@@ -17,99 +17,106 @@
 #include "day12/day12.h"
 #include "day13/day13.h"
 #include "day14/day14.h"
+#include  "day15/day15.h"
 int main(int argc, char **argv) {
 	if (argc == 1) {
 		std::cerr << "please provide the base dir as an argument." << std::endl;
 		std::cerr << "e.g. $pwd on windows or linux." << std::endl;
 		return -1;
 	}
-	std::chrono::high_resolution_clock clock{};
 	if (argc == 2) {
 		{
 			day1 day_1{argv[1]};
-			auto val = clock.now();
+			auto val = std::chrono::high_resolution_clock::now();
 			std::cout << day_1.part1() << std::endl;
 			std::cout << day_1.part2() << std::endl;
-			std::cout << clock.now() - val << std::endl;
+			std::cout << std::chrono::high_resolution_clock::now() - val << std::endl;
 		} {
 			day2 day_2{argv[1]};
-			auto val = clock.now();
+			auto val = std::chrono::high_resolution_clock::now();
 			std::cout << day_2.part1() << std::endl;
 			std::cout << day_2.part2() << std::endl;
-			std::cout << clock.now() - val << std::endl;
+			std::cout << std::chrono::high_resolution_clock::now() - val << std::endl;
 		} {
 			day3 day_3{argv[1]};
-			auto val = clock.now();
+			auto val = std::chrono::high_resolution_clock::now();
 			std::cout << day_3.part1() << std::endl;
 			std::cout << day_3.part2() << std::endl;
-			std::cout << clock.now() - val << std::endl;
+			std::cout << std::chrono::high_resolution_clock::now() - val << std::endl;
 		} {
 			day4 day_4{argv[1]};
-			auto val = clock.now();
+			auto val = std::chrono::high_resolution_clock::now();
 			std::cout << day_4.part1() << std::endl;
 			std::cout << day_4.part2() << std::endl;
-			std::cout << clock.now() - val << std::endl;
+			std::cout << std::chrono::high_resolution_clock::now() - val << std::endl;
 		} {
 			day5 day_5{argv[1]};
-			auto val = clock.now();
+			auto val = std::chrono::high_resolution_clock::now();
 			std::cout << day_5.part1() << std::endl;
 			std::cout << day_5.part2() << std::endl;
-			std::cout << clock.now() - val << std::endl;
+			std::cout << std::chrono::high_resolution_clock::now() - val << std::endl;
 		} {
 			day6 day_6{argv[1]};
-			auto val = clock.now();
+			auto val = std::chrono::high_resolution_clock::now();
 			std::cout << day_6.part1() << std::endl;
 			std::cout << day_6.part2() << std::endl;
-			std::cout << clock.now() - val << std::endl;
+			std::cout << std::chrono::high_resolution_clock::now() - val << std::endl;
 		} {
 			day7 day_6{argv[1]};
-			auto val = clock.now();
+			auto val = std::chrono::high_resolution_clock::now();
 			std::cout << day_6.part1() << std::endl;
 			std::cout << day_6.part2() << std::endl;
-			std::cout << clock.now() - val << std::endl;
+			std::cout << std::chrono::high_resolution_clock::now() - val << std::endl;
 		} {
 			day8 day_6{argv[1]};
-			auto val = clock.now();
+			auto val = std::chrono::high_resolution_clock::now();
 			std::cout << day_6.part1() << std::endl;
 			std::cout << day_6.part2() << std::endl;
-			std::cout << clock.now() - val << std::endl;
+			std::cout << std::chrono::high_resolution_clock::now() - val << std::endl;
 		} {
 			day9 day_6{argv[1]};
-			auto val = clock.now();
+			auto val = std::chrono::high_resolution_clock::now();
 			std::cout << day_6.part1() << std::endl;
 			std::cout << day_6.part2() << std::endl;
-			std::cout << clock.now() - val << std::endl;
+			std::cout << std::chrono::high_resolution_clock::now() - val << std::endl;
 		} {
 			day10 day_6{argv[1]};
-			auto val = clock.now();
+			auto val = std::chrono::high_resolution_clock::now();
 			std::cout << day_6.part1() << std::endl;
 			std::cout << day_6.part2() << std::endl;
-			std::cout << clock.now() - val << std::endl;
+			std::cout << std::chrono::high_resolution_clock::now() - val << std::endl;
 		} {
 			day11 day_6{argv[1]};
-			auto val = clock.now();
+			auto val = std::chrono::high_resolution_clock::now();
 			std::cout << day_6.part1() << std::endl;
 			std::cout << day_6.part2() << std::endl;
-			std::cout << clock.now() - val << std::endl;
+			std::cout << std::chrono::high_resolution_clock::now() - val << std::endl;
 		} {
 			day12 day_6{argv[1]};
-			auto val = clock.now();
+			auto val = std::chrono::high_resolution_clock::now();
 			std::cout << day_6.part1() << std::endl;
 			std::cout << day_6.part2() << std::endl;
-			std::cout << clock.now() - val << std::endl;
+			std::cout << std::chrono::high_resolution_clock::now() - val << std::endl;
 		} {
 			day13 day_6{argv[1]};
-			auto val = clock.now();
+			auto val = std::chrono::high_resolution_clock::now();
 			std::cout << day_6.part1() << std::endl;
 			std::cout << day_6.part2() << std::endl;
-			std::cout << clock.now() - val << std::endl;
+			std::cout << std::chrono::high_resolution_clock::now() - val << std::endl;
 		}
 		{
 			day14 day_6{argv[1]};
-			auto val = clock.now();
+			auto val = std::chrono::high_resolution_clock::now();
 			std::cout << day_6.part1() << std::endl;
 			std::cout << day_6.part2() << std::endl;
-			std::cout << clock.now() - val << std::endl;
+			std::cout << std::chrono::high_resolution_clock::now() - val << std::endl;
+		}
+		{
+			day15 day_6{argv[1]};
+			auto val = std::chrono::high_resolution_clock::now();
+			std::cout << day_6.part1() << std::endl;
+			std::cout << day_6.part2() << std::endl;
+			std::cout << std::chrono::high_resolution_clock::now() - val << std::endl;
 		}
 		return 0;
 	}
@@ -194,6 +201,11 @@ int main(int argc, char **argv) {
 			}
 			case 14: {
 				day14 day_6{argv[1]};
+				std::cout << day_6.part1() << std::endl;
+				std::cout << day_6.part2() << std::endl;
+			}
+			case 15: {
+				day15 day_6{argv[1]};
 				std::cout << day_6.part1() << std::endl;
 				std::cout << day_6.part2() << std::endl;
 			}
