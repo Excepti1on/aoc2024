@@ -10,16 +10,16 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
 find_package(OpenMP REQUIRED)
 if (CMAKE_CXX_COMPILER_ID STREQUAL "Clang")
-set(CMAKE_CXX_FLAGS "-march=native")
+    set(CMAKE_CXX_FLAGS "-march=native")
 elseif (CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
-set(CMAKE_CXX_FLAGS "-march=native -static")
+    set(CMAKE_CXX_FLAGS "-march=native -static")
 elseif (CMAKE_CXX_COMPILER_ID STREQUAL "Intel")
-  # using Intel C++
+    # using Intel C++
 elseif (CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
-	set(CMAKE_SUPPRESS_REGENERATION true)
-  	add_definitions(/arch:AVX2)
-	add_compile_options("-openmp:llvm")
-endif()
+    set(CMAKE_SUPPRESS_REGENERATION true)
+    add_definitions(/arch:AVX2)
+    add_compile_options("-openmp:llvm")
+endif ()
 add_library(day1 OBJECT day1/day1.h day1/day1.cpp)
 
 add_library(day2 OBJECT day2/day2.h day2/day2.cpp)
@@ -34,11 +34,12 @@ add_library(day10 OBJECT day10/day10.cpp day10/day10.h)
 add_library(day11 OBJECT day11/day11.cpp day11/day11.h)
 add_library(day12 OBJECT day12/day12.cpp day12/day12.h)
 add_library(day13 OBJECT day13/day13.cpp day13/day13.h)
+add_library(day14 OBJECT day14/day14.h day14/day14.cpp)
 
 add_executable(aoc2024 main.cpp)
 
 target_link_libraries(day6 OpenMP::OpenMP_CXX)
-target_link_libraries(aoc2024 PUBLIC day1 day2 day3 day4 day5 day6 day7 day8 day9 day10 day11 day12 day13 OpenMP::OpenMP_CXX)
+target_link_libraries(aoc2024 PUBLIC day1 day2 day3 day4 day5 day6 day7 day8 day9 day10 day11 day12 day13 day14 OpenMP::OpenMP_CXX)
 
 enable_testing()
 add_executable(testAll tests/test.cpp)

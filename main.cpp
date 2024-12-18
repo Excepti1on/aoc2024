@@ -16,6 +16,7 @@
 #include "day9/day9.h"
 #include "day12/day12.h"
 #include "day13/day13.h"
+#include "day14/day14.h"
 int main(int argc, char **argv) {
 	if (argc == 1) {
 		std::cerr << "please provide the base dir as an argument." << std::endl;
@@ -103,6 +104,13 @@ int main(int argc, char **argv) {
 			std::cout << day_6.part2() << std::endl;
 			std::cout << clock.now() - val << std::endl;
 		}
+		{
+			day14 day_6{argv[1]};
+			auto val = clock.now();
+			std::cout << day_6.part1() << std::endl;
+			std::cout << day_6.part2() << std::endl;
+			std::cout << clock.now() - val << std::endl;
+		}
 		return 0;
 	}
 
@@ -181,6 +189,11 @@ int main(int argc, char **argv) {
 			}
 			case 13: {
 				day13 day_6{argv[1]};
+				std::cout << day_6.part1() << std::endl;
+				std::cout << day_6.part2() << std::endl;
+			}
+			case 14: {
+				day14 day_6{argv[1]};
 				std::cout << day_6.part1() << std::endl;
 				std::cout << day_6.part2() << std::endl;
 			}
